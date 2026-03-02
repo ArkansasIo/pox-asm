@@ -1,0 +1,62 @@
+#pragma once
+#include <stdint.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+typedef struct {
+  uint8_t w, h;
+  const uint8_t* data;
+} PoxSprite1;
+
+typedef enum {
+  SPR_UI_HEART_8, SPR_UI_SKULL_8, SPR_UI_STAR_8, SPR_UI_ARROW_8,
+  SPR_UI_LOCK_8, SPR_UI_KEY_8, SPR_UI_BATTERY_8, SPR_UI_WIFI_8,
+  SPR_UI_SAVE_8, SPR_UI_LOAD_8, SPR_UI_SOUND_8, SPR_UI_MUTE_8,
+  
+  SPR_DIGIT_0_8, SPR_DIGIT_1_8, SPR_DIGIT_2_8, SPR_DIGIT_3_8, SPR_DIGIT_4_8,
+  SPR_DIGIT_5_8, SPR_DIGIT_6_8, SPR_DIGIT_7_8, SPR_DIGIT_8_8, SPR_DIGIT_9_8,
+  
+  SPR_FONT_A_8, SPR_FONT_B_8, SPR_FONT_C_8, SPR_FONT_D_8, SPR_FONT_E_8,
+  SPR_FONT_F_8, SPR_FONT_G_8, SPR_FONT_H_8, SPR_FONT_I_8, SPR_FONT_J_8,
+  
+  SPR_PL_IDLE_0_8, SPR_PL_WALK_0_8, SPR_PL_WALK_1_8, SPR_PL_ATK_0_8, SPR_PL_HIT_0_8,
+  
+  SPR_ALIEN_GRUNT_0_8, SPR_ALIEN_GRUNT_1_8, SPR_ALIEN_SCOUT_0_8, SPR_ALIEN_SCOUT_1_8,
+  SPR_ALIEN_TANK_0_8, SPR_ALIEN_TANK_1_8,
+  
+  SPR_BUG_0_8, SPR_BUG_1_8, SPR_SPORE_0_8, SPR_SPORE_1_8, SPR_VIRUS_0_8, SPR_VIRUS_1_8,
+  
+  SPR_ITEM_MEDKIT_8, SPR_ITEM_BOMB_8, SPR_ITEM_SHIELD_8, SPR_ITEM_COIN_8,
+  SPR_ITEM_CRYSTAL_8, SPR_ITEM_CHIP_8, SPR_ITEM_FUEL_8, SPR_ITEM_MAP_8,
+  
+  SPR_TILE_FLOOR_8, SPR_TILE_WALL_8, SPR_TILE_DOOR_CLOSED_8, SPR_TILE_DOOR_OPEN_8,
+  SPR_TILE_HAZARD_8, SPR_TILE_PANEL_8, SPR_TILE_LADDER_8, SPR_TILE_TELEPORT_8,
+  
+  SPR_BOSS_CORE_0_16, SPR_BOSS_CORE_1_16, SPR_BOSS_HIVE_0_16,
+  SPR_BOSS_HIVE_1_16, SPR_BOSS_WARDEN_0_16, SPR_BOSS_WARDEN_1_16,
+  
+  SPR_COUNT
+} PoxSpriteId;
+
+extern const PoxSprite1 POX_SPRITEPACK_V1[SPR_COUNT];
+
+typedef struct { const PoxSpriteId* frames; uint8_t count; uint8_t fps; } PoxAnim;
+
+extern const PoxAnim POX_ANIM_PLAYER_IDLE;
+extern const PoxAnim POX_ANIM_PLAYER_WALK;
+extern const PoxAnim POX_ANIM_PLAYER_ATK;
+extern const PoxAnim POX_ANIM_ALIEN_GRUNT;
+extern const PoxAnim POX_ANIM_ALIEN_SCOUT;
+extern const PoxAnim POX_ANIM_ALIEN_TANK;
+extern const PoxAnim POX_ANIM_BUG;
+extern const PoxAnim POX_ANIM_SPORE;
+extern const PoxAnim POX_ANIM_VIRUS;
+extern const PoxAnim POX_ANIM_BOSS_CORE;
+extern const PoxAnim POX_ANIM_BOSS_HIVE;
+extern const PoxAnim POX_ANIM_BOSS_WARDEN;
+
+#ifdef __cplusplus
+}
+#endif
